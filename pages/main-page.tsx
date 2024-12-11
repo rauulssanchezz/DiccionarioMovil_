@@ -5,17 +5,19 @@ import Footer from "../components/shared/footer";
 import SearchBar from "../components/main-page/search-bar";
 import WordsView from "../components/main-page/words-view";
 import { useState } from "react";
+import ResetWords from "../components/main-page/reset-words";
 
 
-export default function MainPage() {
+export default function MainPage({ navigation }: { navigation: any }) {
     const [search, setSearch] = useState('');
 
     return(
     <View style={theme.container}>
         
             <StatusBar style="auto" />
-            <Header/>
+            <Header navigation={navigation}/>
             <SearchBar setSearch={setSearch}/>
+            <ResetWords setSearch={setSearch}/>
             <WordsView search={search}/>
             <Footer/>
        

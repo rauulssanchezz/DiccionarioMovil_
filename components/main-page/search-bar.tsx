@@ -10,6 +10,7 @@ export default function SearchBar({setSearch}:{setSearch: (search: string) => vo
 
     const handleSearch = (text: string) => {
         setSearch(text.toLowerCase());
+        setSearchText('');
     }
 
     return(
