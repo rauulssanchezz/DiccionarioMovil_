@@ -1,7 +1,5 @@
 import { Linking, StyleSheet, Text, View } from "react-native";
 
-const search = require('../../assets/search.png');
-
 export default function Footer() {
 
     const openLinkSearch = () => {

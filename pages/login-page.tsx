@@ -7,46 +7,48 @@ import { db } from "../firebase-config";
 
 
 export default function LoginPage({ navigation }: { navigation: any }) {
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
 
-    const handleLogin = async () => {
-        const login: boolean = await checkUserCredentials({ name, password });
-        if(login){
-          navigation.navigate('AdminPage');
-        }
-        
-        console.log('Iniciando sesión...', { name, password });
-    };
+  const handleLogin = async () => {
+    const login: boolean = await checkUserCredentials({ name, password });
+    if(login){
+      navigation.navigate('AdminPage');
+      setName('');
+      setPassword('');
+    }else{
+      Alert.alert('Credenciales incorrectas');
+    }
+  };
 
-    return (
-        <View style={styles.container}>
-        <View style={styles.card}>
-            <Text style={styles.title}>Iniciar Sesión</Text>
+  return (
+      <View style={styles.container}>
+      <View style={styles.card}>
+          <Text style={styles.title}>Iniciar Sesión</Text>
 
-            <TextInput
-            style={styles.input}
-            placeholder="Introduce tu nombre de usuario"
-            value={name}
-            onChangeText={setName}
-            autoCapitalize="none"
-            keyboardType="default"
-            />
+          <TextInput
+          style={styles.input}
+          placeholder="Introduce tu nombre de usuario"
+          value={name}
+          onChangeText={setName}
+          autoCapitalize="none"
+          keyboardType="default"
+          />
 
-            <TextInput
-            style={styles.input}
-            placeholder="Introduce tu contraseña"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
-            />
+          <TextInput
+          style={styles.input}
+          placeholder="Introduce tu contraseña"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+          />
 
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
-            <Text style={styles.buttonText}>Iniciar Sesión</Text>
-            </TouchableOpacity>
-        </View>
-        </View>
-    );
+          <TouchableOpacity style={styles.button} onPress={handleLogin}>
+          <Text style={styles.buttonText}>Iniciar Sesión</Text>
+          </TouchableOpacity>
+      </View>
+      </View>
+  );
 }
 
 const styles = StyleSheet.create({

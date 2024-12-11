@@ -1,4 +1,3 @@
-import { set } from "firebase/database";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 

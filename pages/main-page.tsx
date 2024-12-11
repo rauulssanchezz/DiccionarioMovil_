@@ -1,5 +1,4 @@
 import { StyleSheet, View } from "react-native";
-import Header from "../components/shared/header";
 import { StatusBar } from "expo-status-bar";
 import Footer from "../components/shared/footer";
 import SearchBar from "../components/main-page/search-bar";
