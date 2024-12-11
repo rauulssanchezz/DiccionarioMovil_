@@ -15,7 +15,6 @@ export default function MainPage({ navigation }: { navigation: any }) {
     <View style={theme.container}>
         
             <StatusBar style="auto" />
-            <Header navigation={navigation}/>
             <SearchBar setSearch={setSearch}/>
             <ResetWords setSearch={setSearch}/>
             <WordsView search={search}/>

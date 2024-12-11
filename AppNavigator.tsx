@@ -5,6 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import MainPage from './pages/main-page';
 import LoginPage from './pages/login-page';
 import AdminPage from './pages/admin-page';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import Header from './components/shared/header';
 
 const Stack = createStackNavigator();
 
@@ -12,9 +14,15 @@ export default function AppNavigator() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="MainPage">
-                <Stack.Screen name="MainPage" component={MainPage} options={{ title: 'Home' }} />
-                <Stack.Screen name="LoginPage" component={LoginPage} options={{ title: 'Login' }} />
-                <Stack.Screen name="AdminPage" component={AdminPage} options={{ title: 'Admin' }} />
+                <Stack.Screen name="MainPage" component={MainPage} options={({ navigation }) => ({
+                    headerTitle: () => <Header navigation={navigation} />
+                })} />
+                <Stack.Screen name="LoginPage" component={LoginPage} options={({ navigation }) => ({
+                    headerTitle: () => <Header navigation={navigation} />
+                })} />
+                <Stack.Screen name="AdminPage" component={AdminPage} options={({ navigation }) => ({
+                    headerTitle: () => <Header navigation={navigation} />
+                })} />
             </Stack.Navigator>
         </NavigationContainer>
     );
