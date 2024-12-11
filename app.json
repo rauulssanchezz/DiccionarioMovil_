@@ -13,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.diccionariomovil"
     },
     "android": {
       "adaptiveIcon": {
@@ -24,6 +25,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.ico"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a7afc354-11f8-49be-9b07-45738074f232"
+      }
     }
   }
 }

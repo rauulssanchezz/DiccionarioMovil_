@@ -120,7 +120,7 @@ const saveWord = async(word: string, mean:string ) => {
 
     try{
       await set(wordRef, {
-        word: word,
+        word: word.toLowerCase(),
         mean: mean
       });
       console.log('Data saved successfully');
