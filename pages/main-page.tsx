@@ -8,7 +8,7 @@ import { useState } from "react";
 import ResetWords from "../components/main-page/reset-words";
 
 
-export default function MainPage({ navigation }: { navigation: any }) {
+export default function MainPage() {
     const [search, setSearch] = useState('');
 
     return(

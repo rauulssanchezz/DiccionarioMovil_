@@ -5,7 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import MainPage from './pages/main-page';
 import LoginPage from './pages/login-page';
 import AdminPage from './pages/admin-page';
-import { Image, StyleSheet, Text, View } from 'react-native';
 import Header from './components/shared/header';
 
 const Stack = createStackNavigator();
